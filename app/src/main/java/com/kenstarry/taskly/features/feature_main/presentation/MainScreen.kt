@@ -1,6 +1,7 @@
 package com.kenstarry.taskly.features.feature_main.presentation
 
 import android.widget.Toast
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -15,7 +16,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import com.kenstarry.taskly.features.feature_main.presentation.components.Fab
+import com.kenstarry.taskly.features.feature_main.presentation.components.MainTopAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,14 +31,20 @@ fun MainScreen() {
         floatingActionButton = { Fab(onClick = {}) },
         floatingActionButtonPosition = FabPosition.Center
     ) { contentPadding ->
-
-        Column(
+        Box(
             modifier = Modifier
                 .padding(contentPadding)
         ) {
+            Column(
+                modifier = Modifier
+                    .padding(16.dp)
+            ) {
 
+                //  top app bar
+                MainTopAppBar()
+
+            }
         }
-
     }
 }
 
