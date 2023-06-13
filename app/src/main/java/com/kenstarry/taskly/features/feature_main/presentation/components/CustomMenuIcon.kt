@@ -3,6 +3,7 @@ package com.kenstarry.taskly.features.feature_main.presentation.components
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -24,14 +25,17 @@ fun CustomMenuIcon(
         mutableFloatStateOf(24f)
     }
     val radius by remember {
-        mutableFloatStateOf(15f)
+        mutableFloatStateOf(12f)
     }
 
     Canvas(
         modifier = Modifier
             .size(30.dp)
             .background(color = MaterialTheme.colorScheme.background)
-            .clickable { },
+            .clickable(
+                indication = null,
+                interactionSource = remember { MutableInteractionSource() }
+            ) { },
         onDraw = {
             //  menu icon
             drawCircle(

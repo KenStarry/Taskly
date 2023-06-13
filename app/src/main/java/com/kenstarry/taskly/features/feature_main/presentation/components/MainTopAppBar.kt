@@ -38,7 +38,7 @@ fun MainTopAppBar() {
             CustomMenuIcon(
                 onMenuClicked = {}
             )
-            Spacer(modifier = Modifier.width(16.dp))
+            Spacer(modifier = Modifier.width(8.dp))
             //  name
             Text(text = "Taskly", fontWeight = FontWeight.Bold, fontSize = 24.sp)
         }
